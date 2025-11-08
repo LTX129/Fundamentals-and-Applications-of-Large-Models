@@ -82,7 +82,7 @@ def set_seed(seed=3407):
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
-set_seed(42)
+set_seed(3407)
 ```
 ⸻
 ## 🚀 训练（Baseline）
