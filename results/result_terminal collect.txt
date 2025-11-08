@@ -1,0 +1,99 @@
+Vocab size: 32000
+Parameters: 21.58M
+epoch 1: 100%|███████████████████████| 31200/31200 [20:35<00:00, 25.25it/s, loss=1.462, lr=1.79e-04]
+[eval] avg_hyp_len=87.00, empty_hyp=0/500
+BLEU-1:0.428 BLEU-2:0.016 BLEU-3:0.002 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 0.76 | ROUGE-L(F1): 0.75
+epoch 2: 100%|███████████████████████| 31200/31200 [20:05<00:00, 25.89it/s, loss=1.477, lr=1.27e-04]
+[eval] avg_hyp_len=87.00, empty_hyp=0/500
+BLEU-1:0.299 BLEU-2:0.002 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 0.53 | ROUGE-L(F1): 0.53
+epoch 3: 100%|███████████████████████| 31200/31200 [19:51<00:00, 26.20it/s, loss=1.508, lr=1.03e-04]
+[eval] avg_hyp_len=86.95, empty_hyp=0/500
+BLEU-1:0.244 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 0.43 | ROUGE-L(F1): 0.43
+
+Vocab size: 32000
+Parameters: 20.54M
+epoch 1: 100%|███████████████████████| 31200/31200 [11:47<00:00, 44.09it/s, loss=1.473, lr=3.58e-04]
+[eval] avg_hyp_len=5.99, empty_hyp=0/500
+BLEU-1:0.000 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 3.23 | ROUGE-L(F1,mref): 2.53
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 3.23 | ROUGE-L(F1): 2.53
+epoch 2: 100%|███████████████████████| 31200/31200 [12:38<00:00, 41.14it/s, loss=1.485, lr=2.53e-04]
+[eval] avg_hyp_len=5.98, empty_hyp=0/500
+BLEU-1:0.000 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 8.37 | ROUGE-L(F1,mref): 7.32
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 8.37 | ROUGE-L(F1): 7.32
+epoch 3: 100%|███████████████████████| 31200/31200 [12:08<00:00, 42.83it/s, loss=1.489, lr=2.07e-04]
+[eval] avg_hyp_len=5.89, empty_hyp=0/500
+BLEU-1:0.000 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 8.98 | ROUGE-L(F1,mref): 7.80
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 8.98 | ROUGE-L(F1): 7.80
+
+/opt/conda/bin/conda run -n largemodel --no-capture-output python /root/workspace/tmp/largemodel/src/main.py --data_dir /root/workspace/tmp/largemodel/dataset/sumdata/train --valid_dir /root/workspace/tmp/largemodel/dataset/sumdata/DUC2004 --work_dir /root/workspace/tmp/largemodel/outputs/baseline --vocab_size 32000 --batch_size 128 --grad_accum 2 --d_model 192 --n_heads 3 --num_layers 2 --ff_dim 768 --warmup_steps 8000 --no_compile --lr 5e-4 --epochs 3 --amp_dtype bf16 --dropout 0.1 --decode beam --beam_size 6 --length_penalty 1.0 --min_gen_len 6 --max_len 20 --no_repeat_ngram_size 3 --eos_bias 0.5
+/opt/conda/envs/largemodel/lib/python3.13/site-packages/torch/__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+Vocab size: 32000
+Parameters: 20.54M
+epoch 1: 100%|███████████████████████| 31200/31200 [11:37<00:00, 44.73it/s, loss=1.477, lr=3.58e-04]
+[eval] avg_hyp_len=5.73, empty_hyp=0/500
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 2.81 | ROUGE-L(F1,mref): 2.18
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 2.81 | ROUGE-L(F1): 2.18
+epoch 2: 100%|███████████████████████| 31200/31200 [12:38<00:00, 41.14it/s, loss=1.484, lr=2.53e-04]
+[eval] avg_hyp_len=4.82, empty_hyp=0/500
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 11.71 | ROUGE-L(F1,mref): 10.95
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 11.71 | ROUGE-L(F1): 10.95
+epoch 3: 100%|███████████████████████| 31200/31200 [12:12<00:00, 42.59it/s, loss=1.487, lr=2.07e-04]
+[eval] avg_hyp_len=5.65, empty_hyp=0/500
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 13.10 | ROUGE-L(F1,mref): 11.36
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 13.10 | ROUGE-L(F1): 11.36
+
+
+/opt/conda/bin/conda run -n largemodel --no-capture-output python /root/workspace/tmp/largemodel/src/main.py --data_dir /root/workspace/tmp/largemodel/dataset/sumdata/train --valid_dir /root/workspace/tmp/largemodel/dataset/sumdata/DUC2004 --work_dir /root/workspace/tmp/largemodel/outputs/baseline --vocab_size 32000 --batch_size 128 --grad_accum 2 --d_model 192 --n_heads 3 --num_layers 3 --ff_dim 768 --warmup_steps 8000 --no_compile --lr 3e-4 --epochs 4 --amp_dtype bf16 --dropout 0.1 --decode beam --beam_size 6 --length_penalty 0.8 --min_gen_len 6 --max_len 20 --no_repeat_ngram_size 3 --eos_bias 0.4 --share_embeddings
+/opt/conda/envs/largemodel/lib/python3.13/site-packages/torch/__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+Vocab size: 32000
+Parameters: 15.44M
+epoch 1: 100%|███████████████████████| 31200/31200 [15:00<00:00, 34.66it/s, loss=1.459, lr=2.15e-04]
+[eval] avg_hyp_len=6.65, empty_hyp=0/500
+BLEU-1:11.375 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 10.00 | ROUGE-L(F1,mref): 8.86
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 10.00 | ROUGE-L(F1): 8.86
+epoch 2: 100%|███████████████████████| 31200/31200 [15:40<00:00, 33.16it/s, loss=1.478, lr=1.52e-04]
+[eval] avg_hyp_len=5.99, empty_hyp=0/500
+BLEU-1:12.279 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 9.78 | ROUGE-L(F1,mref): 8.21
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 9.78 | ROUGE-L(F1): 8.21
+epoch 3: 100%|███████████████████████| 31200/31200 [14:57<00:00, 34.77it/s, loss=1.498, lr=1.24e-04]
+[eval] avg_hyp_len=6.00, empty_hyp=0/500
+BLEU-1:6.369 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 5.26 | ROUGE-L(F1,mref): 4.54
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 5.26 | ROUGE-L(F1): 4.54
+
+
+ablation
+>>> Running baseline -> /root/workspace/tmp/largemodel/outputs/baseline
+epoch 1: 100%|███████████████████████| 31200/31200 [15:34<00:00, 33.38it/s, loss=1.463, lr=3.58e-04]
+[eval] avg_hyp_len=9.44, empty_hyp=0/500
+BLEU-1:8.941 BLEU-2:0.024 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 10.06 | ROUGE-L(F1,mref): 6.99
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 10.06 | ROUGE-L(F1): 6.99
+>>> Running ablate_no_posenc -> /root/workspace/tmp/largemodel/outputs/ablate_no_posenc
+epoch 1: 100%|███████████████████████| 31200/31200 [15:20<00:00, 33.88it/s, loss=1.463, lr=3.58e-04]
+[eval] avg_hyp_len=8.57, empty_hyp=0/500
+BLEU-1:2.473 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 2.78 | ROUGE-L(F1,mref): 2.19
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 2.78 | ROUGE-L(F1): 2.19
+>>> Running ablate_single_head -> /root/workspace/tmp/largemodel/outputs/ablate_single_head
+epoch 1: 100%|███████████████████████| 31200/31200 [15:30<00:00, 33.52it/s, loss=1.465, lr=3.58e-04]
+[eval] avg_hyp_len=7.53, empty_hyp=0/500
+BLEU-1:5.448 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 5.58 | ROUGE-L(F1,mref): 4.55
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 5.58 | ROUGE-L(F1): 4.55
+>>> Running ablate_no_label_smoothing -> /root/workspace/tmp/largemodel/outputs/ablate_no_label_smoothing
+epoch 1: 100%|███████████████████████| 31200/31200 [15:08<00:00, 34.34it/s, loss=0.065, lr=3.58e-04]
+[eval] avg_hyp_len=17.53, empty_hyp=0/500
+BLEU-1:0.034 BLEU-2:0.000 BLEU-3:0.000 BLEU-4:0.000 Cum4:0.000
+Eval BLEU-4(mref): 0.00 | ROUGE-1(F1,mref): 0.07 | ROUGE-L(F1,mref): 0.04
+Eval BLEU-4: 0.00 | ROUGE-1(F1): 0.07 | ROUGE-L(F1): 0.04
