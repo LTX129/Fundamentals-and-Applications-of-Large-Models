@@ -31,10 +31,9 @@
 创建虚拟环境示例：
 
 ```bash
-git clone 
+git clone https://github.com/LTX129/Fundamentals-and-Applications-of-Large-Models.git
 conda create -n largemodel python=3.10 -y
 conda activate largemodel
-cd largemodel
 pip install -r requirements.txt 
 ```
 ## 📂 代码结构
